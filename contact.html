@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Maison Nazareth</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="contactstyle.css">
+</head>
+
+<body>
+
+  <!-- BARRE D'EN HAUT (identique sur toutes les pages) -->
+  <header class="site-header">
+    <div class="site-bar">
+      <nav class="site-nav" id="menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="communaute.html">La communauté</a>
+        <a href="messe.html">La messe</a>
+        <a href="activites.html">Activités et événements</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <div class="page-title">
+      <h1>Nous contacter</h1>
+      <p>Une question, une intention de prière, une visite : écrivez-nous.</p>
+    </div>
+
+    <div class="row g-4 mt-2">
+      <!-- Formulaire -->
+      <div class="col-lg-7">
+        <div class="card h-100">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3"><i class="bi bi-chat-dots-fill icon-blue"></i> Envoyez-nous un message</h2>
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nom" class="form-label">Nom complet</label>
+                  <input type="text" id="nom" name="nom" class="form-control" required autocomplete="name">
+                  <div class="invalid-feedback">Veuillez indiquer votre nom.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="tel" class="form-label">Téléphone</label>
+                  <input type="tel" id="tel" name="tel" class="form-control" placeholder="+237 6XX XXX XXX" required autocomplete="tel">
+                  <div class="invalid-feedback">Veuillez indiquer un numéro.</div>
+                </div>
+                <div class="col-12">
+                  <label for="objet" class="form-label">Objet</label>
+                  <select id="objet" name="objet" class="form-select" required>
+                    <option value="" selected disabled>Choisissez un objet…</option>
+                    <option>Question générale</option>
+                    <option>Intention de messe / de prière</option>
+                    <option>Rendez-vous avec un prêtre</option>
+                    <option>Retraite ou séjour spirituel</option>
+                    <option>Rejoindre une activité (chorale, jeunes, catéchisme…)</option>
+                    <option>Autre</option>
+                  </select>
+                  <div class="invalid-feedback">Veuillez choisir un objet.</div>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Votre message</label>
+                  <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                  <div class="invalid-feedback">Veuillez écrire votre message.</div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary w-100"><i class="bi bi-whatsapp"></i> Envoyer par WhatsApp</button>
+                  <p class="small text-secondary mt-2 mb-0">Votre message s’ouvrira dans WhatsApp, prêt à être envoyé au secrétariat.</p>
+                  <p id="retour" class="text-success fw-bold mt-2 mb-0 d-none">Merci ! Terminez l’envoi dans la fenêtre WhatsApp.</p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informations -->
+      <div class="col-lg-5">
+        <div class="card mb-4">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">Nous trouver</h2>
+            <p class="mb-2"><i class="bi bi-geo-alt-fill icon-blue"></i> Mvolyé, Yaoundé </p>
+            <p class="mb-2"><i class="bi bi-telephone-fill icon-blue"></i> <a href="tel:+237694424444" class="link-light">(numero)</a></p>
+            <p class="mb-2"><i class="bi bi-clock-fill icon-blue"></i> Secrétariat : lundi au vendredi, 9h–12h et 14h–17h</p>
+            <p class="mb-0"><i class="bi bi-envelope-fill icon-blue"></i> [adresse e-mail à ajouter]</p>
+          </div>
+        </div>
+        <div class="card map-card">
+          <iframe title="Carte Mvolyé, Yaoundé" loading="lazy" src="https://www.google.com/maps?q=Mvolyé,+Yaoundé,+Cameroun&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center mt-4">Vous cherchez les horaires ? <a href="messe.html" class="link-info">Consultez la page de la messe</a>.</p>
+  </main>
+
+  <footer class="bg-dark text-white text-center">
+    &copy; 2026 MAISON NAZARETH. Tous droits réservés.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Numéro WhatsApp du secrétariat (indicatif pays sans le +, sans espaces)
+    const WHATSAPP = '237694424444';
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!this.checkValidity()) { this.classList.add('was-validated'); return; }
+      const d = new FormData(this);
+      const texte = `Bonjour Maison Nazareth,\nObjet : ${d.get('objet')}\nNom : ${d.get('nom')}\nTéléphone : ${d.get('tel')}\n\n${d.get('message')}`;
+      window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texte), '_blank', 'noopener');
+      document.getElementById('retour').classList.remove('d-none');
+      this.reset();
+      this.classList.remove('was-validated');
+    });
+  </script>
+</body>
+</html>

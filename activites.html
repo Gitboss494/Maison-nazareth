@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activités et événements – Maison Nazareth</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="activitesstyle.css">
+</head>
+
+<body>
+
+  <!-- BARRE D'EN HAUT (identique sur toutes les pages) -->
+  <header class="site-header">
+    <div class="site-bar">
+      <nav class="site-nav" id="menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="communaute.html">La communauté</a>
+        <a href="messe.html">La messe</a>
+        <a href="activites.html" aria-current="page">Activités et événements</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <div class="page-title">
+      <h1>Activités et événements</h1>
+      <p>La vie de la communauté au-delà du dimanche, et les grands rendez-vous de l’année.</p>
+    </div>
+
+    <!-- ACTIVITÉS -->
+    <section class="mt-5">
+      <h2 class="section-title">Nos activités</h2>
+      
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+              <i class="bi bi-journal-text display-6 icon-blue"></i>
+              <h3 class="h5 mt-2">Catéchisme</h3>
+              <p>Découvrir et approfondir la foi chrétienne, en vue des sacrements.</p>
+              <span class="badge text-bg-secondary">Enfants et adultes</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+              <i class="bi bi-music-note-beamed display-6 icon-blue"></i>
+              <h3 class="h5 mt-2">Chorale</h3>
+              <p>Répétitions et animation des messes du dimanche.</p>
+              <span class="badge text-bg-secondary">Tous</span>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+              <i class="bi bi-people-fill display-6 icon-blue"></i>
+              <h3 class="h5 mt-2">Groupe des jeunes</h3>
+              <p>Rencontres, partage, jeux et prière entre jeunes.</p>
+              <span class="badge text-bg-secondary">Jeunes</span>
+              <p class="small mt-2 mb-0 todo">Quand : </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+              <i class="bi bi-book-fill display-6 icon-blue"></i>
+              <h3 class="h5 mt-2">Partage biblique</h3>
+              <p>Lire et partager la Parole de Dieu en petit groupe.</p>
+              <span class="badge text-bg-secondary">Adultes</span>
+              <p class="small mt-2 mb-0 todo">Quand : </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+              <i class="bi bi-moon-stars-fill display-6 icon-blue"></i>
+              <h3 class="h5 mt-2">Retraites et séjours</h3>
+              <p>Silence, repos et prière dans la maison d’accueil, sur réservation.</p>
+              <span class="badge text-bg-secondary">Tous</span>
+              <p class="small mt-2 mb-0 todo">Quand :</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+              <i class="bi bi-heart-fill display-6 icon-blue"></i>
+              <h3 class="h5 mt-2">Action caritative</h3>
+              <p>Aide concrète aux personnes en difficulté autour de nous.</p>
+              <span class="badge text-bg-secondary">Tous</span>
+              <p class="small mt-2 mb-0 todo">Quand : </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ÉVÉNEMENTS MAJEURS -->
+    <section class="mt-5">
+      <h2 class="section-title">Les événements majeurs de l’année</h2>
+      
+      <div class="card">
+        <div class="card-body p-4">
+          <div class="frise">
+
+            <div class="item">
+              <span class="quand">Novembre – décembre</span>
+              <h3 ><i class="bi bi-star-fill icon-blue me-1"></i> L’Avent</h3>
+              <p style="font-size: 1.2rem;">Quatre semaines pour se préparer à Noël : prière, confessions et temps de partage.</p>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-5">
+      <div class="card cta">
+        <div class="card-body p-4 text-center">
+          <h2 class="h3">Participer à une activité</h2>
+          <p>Dites-nous ce qui vous intéresse, nous vous orienterons. Les annonces sont aussi faites à la fin des messes.</p>
+          <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center">
+    &copy; 2026 MAISON NAZARETH. Tous droits réservés.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

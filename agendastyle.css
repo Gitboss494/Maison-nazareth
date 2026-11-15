@@ -1,0 +1,23 @@
+/* agendastyle.css : page « Agenda et annonces » */
+.agenda { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.agenda li { display: grid; grid-template-columns: 84px 1fr; gap: 18px; align-items: start; }
+
+.date-badge {
+  background: var(--gold);
+  color: #222;
+  border-radius: 10px;
+  text-align: center;
+  padding: 8px 4px;
+  line-height: 1.1;
+}
+.date-badge .day { display: block; font-size: 2rem; font-weight: bold; }
+.date-badge .month { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+.event h3 { margin: 0 0 4px; font-size: 1.35rem; }
+.event .meta { margin: 0 0 8px; color: var(--gold); font-size: 0.95rem; }
+.event p { margin: 0; }
+
+.past li { opacity: 0.85; }
+.past .date-badge { background: #bbb; }
+.empty { color: #ddd; font-style: italic; }
+.muted { color: #bbb; font-size: 0.85rem; margin-top: 24px; }
